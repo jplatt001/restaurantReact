@@ -1,0 +1,510 @@
+/* Reset and Base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: #ebccc2;
+    color: rgb(100, 40, 0);
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body > div {
+    flex: 1; /* Allow the main content to take up all available space */
+  }
+
+/* Page Container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow the main content to take up available space */
+  }
+  
+
+/* Home Background */
+#home {
+    background-image: url('images/restaurant.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    height: 100vh; 
+    color: white; 
+}
+
+/* Header & Navigation */
+header {
+    background: #0e0401;
+    color: rgb(161, 80, 26);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    color: rgb(161, 80, 26);
+  }
+
+  .nav-links.open {
+    display: flex;
+    background-color: #0e0401;
+    padding: 10px 20px;
+    border-top: 1px solid rgb(161, 80, 26);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 8px 0;
+    width: 100%;
+  }
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    color: rgb(161, 80, 26);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Menu Section */
+.menu-main {
+    padding: 3rem 1rem;
+    background-color: #ebccc2;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #642800;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Tailwind gap utility in CSS */
+}
+
+/* Add this to your CSS file (styles.css or similar) */
+
+.menu-item {
+  background-color: white;
+  border-radius: 1rem;  /* rounded corners */
+  overflow: hidden; /* makes sure the image fits inside the rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow for the item */
+  padding: 1rem; /* space around the content */
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem 1rem 0 0; /* rounded top corners for the image */
+}
+
+.menu-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #642800;
+}
+
+.menu-item p {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.menu-item button {
+  background-color: #a1501a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+  background-color: #8b3d0c;
+}
+
+/* Flex container for layout */
+.menu-items {
+  padding: 3rem 0;
+  background-color: #ebccc2;
+}
+
+.menu-items .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+/* Custom CSS for testing */
+.menu-items .flex {
+    gap: 2rem; /* Equivalent to gap-8 */
+  }
+  
+  .menu-items .flex > div {
+    margin: 1rem; /* Ensure there's margin around each menu card */
+  }
+  
+
+.menu-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    margin: 0.5rem; /* Adds margin around the menu card */
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.menu-item-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #642800;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-price {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* This ensures the images are scaled properly within their containers */
+.menu-item-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+/* Cart Section */
+.cart {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.cart h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.cart button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #6d6d6d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.cart button:hover {
+    background-color: #4e4e4e;
+}
+
+#clear-cart {
+    display: block;
+    margin: 0 auto;
+    background-color: #b23e2b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clear-cart:hover {
+    background-color: #8a2c1d;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 20px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: none;
+}
+
+.slider img:first-child {
+    display: block;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    gap: 10px;
+}
+
+iframe {
+    padding: 40px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Footer */
+footer {
+    background: #0e0401;
+    color: rgb(161, 80, 26);
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer a {
+    color: #485fac;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-card {
+        width: 90%;
+    }
+
+    .contact form {
+        width: 90%;
+    }
+
+    .about p {
+        width: 90%;
+    }
+
+    iframe {
+        padding: 20px;
+    }
+
+    .slider img {
+        width: 90%;
+    }
+
+    .cart {
+        width: 90%;
+    }
+}
+
+.map-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero {
+    font-size: 1.5em;
+    height: 40vh;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .menu-title {
+    font-size: 2rem;
+  }
+
+  .menu-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .menu-item p {
+    font-size: 1rem;
+  }
+
+  .about h2,
+  .gallery h2,
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .slider img {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 10px 5px;
+  }
+}
